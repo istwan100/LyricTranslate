@@ -29,7 +29,10 @@ public class LyricTranslator {
 
     private void writeOutputFile(String text) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("files/output.txt"));
+            File outputFile = new File("files/output.txt");
+            outputFile.getParentFile().mkdirs();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile.getAbsolutePath()));
             writer.write(text);
             writer.close();
         } catch (Exception e) {
@@ -39,9 +42,12 @@ public class LyricTranslator {
 
     private String readInputFile() {
 
+        File inputFile = new File("files/input.txt");
+        inputFile.getParentFile().mkdirs();
+
         FileReader inputFileReader;
         try {
-            inputFileReader = new FileReader("files/input.txt");
+            inputFileReader = new FileReader(inputFile.getAbsolutePath());
         } catch (Exception e) {
             e.printStackTrace();
             return null;
