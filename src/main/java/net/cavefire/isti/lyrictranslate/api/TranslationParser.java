@@ -11,7 +11,6 @@ public class TranslationParser {
     }
 
     public String getText() {
-        System.out.println(jsonArray.toJSONString());
 
         String text = "";
 

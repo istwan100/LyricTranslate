@@ -26,6 +26,8 @@ public class LyricTranslator {
         String lastLang = inputLang;
         for (String language : languages) {
             text = main.translator.translate(text, lastLang, language);
+            System.out.println("Current language: " + language);
+
             lastLang = language;
         }
 

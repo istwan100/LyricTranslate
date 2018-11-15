@@ -49,7 +49,7 @@ public class Translator {
         int responseCode = con.getResponseCode();
 
         //DEBUG
-        System.out.println("Sending GET request to URL: " + url);
+        //System.out.println("Sending GET request");
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
@@ -63,8 +63,6 @@ public class Translator {
         JSONParser jsonParser = new JSONParser();
         this.jsonResponse = (JSONArray) jsonParser.parse(response.toString());
         this.translationParser = new TranslationParser((JSONArray) this.jsonResponse.get(0));
-
-        System.out.println(jsonResponse.toJSONString());
 
         return this.jsonResponse;
     }
