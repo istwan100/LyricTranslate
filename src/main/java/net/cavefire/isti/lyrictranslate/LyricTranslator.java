@@ -5,13 +5,18 @@ import java.io.*;
 public class LyricTranslator {
 
     private Main main;
+    private String[] languages;
 
-    LyricTranslator(Main main){
+    LyricTranslator(Main main, String[] languages){
         this.main = main;
+        this.languages = languages;
     }
 
     public void translateFile() {
-        String[] languages = {"fr","la", "zu", "ru", "zh", "la", "de"};
+        if (languages.length == 0) {
+            this.languages = new String[]{"fr","la", "zu", "ru", "zh", "la", "de"};
+        }
+
         String text = readInputFile();
 
         text = main.translator.translate(text, "auto", "en");
@@ -23,6 +28,8 @@ public class LyricTranslator {
             text = main.translator.translate(text, lastLang, language);
             lastLang = language;
         }
+
+        text = main.translator.translate(text, lastLang, inputLang);
 
         writeOutputFile(text);
     }
