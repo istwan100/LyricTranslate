@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. Peter Fecher
+ */
+
 package net.cavefire.isti.lyrictranslate.api;
 
 import org.json.simple.JSONArray;
