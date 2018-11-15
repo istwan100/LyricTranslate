@@ -7,7 +7,7 @@ Translates a text from a input file trough a couple of languages and back to its
 `java -jar LyricTranslate.jar`
 
 you can add following arguments:
-`--langs`/`-l` \
+`--langs`/`-l` 
 to set the languages you want to use
 
 For Example:
