@@ -31,9 +31,11 @@ public class LyricTranslator {
             lastLang = language;
         }
 
+        System.out.println("Translating back to original language (" + inputLang + ")");
         text = main.translator.translate(text, lastLang, inputLang);
 
         writeOutputFile(text);
+        System.out.println("DONE!");
     }
 
     private void writeOutputFile(String text) {
